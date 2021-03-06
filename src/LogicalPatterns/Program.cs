@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace LogicalPatterns
 {
+    /// <summary>
+    /// Ligical Patterns
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -37,27 +40,6 @@ namespace LogicalPatterns
                 return "+ 2 horas no banco e esse mes vc ta com dinheiro pra pagar o meu almoço.";
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public static string AnalisarHorasTrabalhadas(int horas) =>
             horas switch
             {
@@ -66,6 +48,8 @@ namespace LogicalPatterns
                 > 8 and <= 10 => $"Adicionado 2 horas ao banco de horas do dia {DateTime.Now.ToShortDateString()}",
                 _ => "+ 2 horas no banco e esse mes vc ta com dinheiro pra pagar o meu almoço."
             };
+
+        //Descartes
 
 
         public static bool AnalisarPermissao(string ApiKey, string ClientId, string Token) =>

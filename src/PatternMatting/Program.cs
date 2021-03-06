@@ -10,7 +10,7 @@ namespace PatternMatting
 
             foreach (var item in cidadesVisitadas)
             {
-                if (item != null) //is not
+                if (item is "10") //is not
                 {
                     if (item.GetType() != null) //string
                         Console.WriteLine("achei o 10");

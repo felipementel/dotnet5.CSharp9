@@ -16,10 +16,10 @@ namespace PropertyPatterns
                 Nome = faker.Name.FirstName()
             };
 
-            if (pessoa.Id > 20 && pessoa.Nome.StartsWith("b"))
+            if (pessoa.Id > 20 && pessoa.Nome.StartsWith("B"))
                 Console.WriteLine($"{pessoa.Id} - {pessoa.Nome}");
 
-            if (pessoa is {Id: > 20, Nome: "João", Idade: < 60 })
+            if (pessoa is {Id: > 20, Nome: "João", Idade: < 60 }) // <-- melhoria
                 Console.WriteLine($"{pessoa.Id} - {pessoa.Nome}");
         }
     }

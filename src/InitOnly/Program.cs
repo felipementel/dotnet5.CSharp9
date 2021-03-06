@@ -18,6 +18,11 @@ namespace InitOnly
                 Id = 123
             };
 
+            Cidade cidade1 = new Cidade(id: 12,
+                qtdRestaurantes: 12,
+                fundacao: DateTime.Now,
+                true);
+
             //cidade.Id = 123;
         }
     }
@@ -29,21 +34,27 @@ namespace InitOnly
 
         }
 
-        public Cidade(int id, int qtdRestaurantes, DateTime fundacao, bool temPraia)
-        {
-            Id = id;
-            //QtdRestaurantes = qtdRestaurantes;
-            Fundacao = fundacao;
-            TemPraia = temPraia;
-        }
+        //public Cidade(int id, int qtdRestaurantes, DateTime fundacao, bool temPraia)
+        //{
+        //    Id = id;
+        //    QtdRestaurantes = qtdRestaurantes;
+        //    Fundacao = fundacao;
+        //    TemPraia = temPraia;
+        //}
 
         //3 - contrutor
-        //public Cidade(int id, int qtdRestaurantes, DateTime fundacao, bool temPraia) =>      
-        //    (Id, QtdRestaurantes, Fundacao, TemPraia) = (id, qtdRestaurantes, fundacao,  temPraia);
+        public Cidade(
+            int id, 
+            int qtdRestaurantes,
+            DateTime fundacao, bool temPraia) =>
+            (Id, QtdRestaurantes, Fundacao, TemPraia) = (id, qtdRestaurantes, fundacao, temPraia);
 
         //2 - vai quebrar
         //public void SetQtdBar(int qtdBar) =>
         //    QtdRestaurantes = qtdBar;
+
+        //public void SetFundacao(DateTime dateTime1) =>
+        //    Fundacao = dateTime1;
 
         public int Id { get; init; }
 
@@ -57,12 +68,18 @@ namespace InitOnly
     //4
     public class Bairro
     {
-        private readonly string _rua;
+        //mais proximo de imutabilidade - só pode ser instanciado no construtor
+        //muito usado para Interfaces e DI
+        //Nao conseguimos inicializar fora do construtor - via construtor vazio nao conseguimos
+
+        //Para expor publicamente, precisamos de uma propriedade publica
+        //Podem ser incializados com initOnlyProperties
+        private readonly string _rua; 
 
         public string Rua
         {
             get { return _rua; }
-            set { _rua = value; }
+            init { _rua = value; }
         }
 
         //public string Rua2

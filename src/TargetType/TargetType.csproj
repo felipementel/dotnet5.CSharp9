@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>aspnetcoreapp3.1</TargetFramework>
 		<!--<LangVersion>preview</LangVersion>-->
 	</PropertyGroup>
 

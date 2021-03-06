@@ -12,38 +12,57 @@ namespace Records
             var clientClass1 = new ClientClass()
             {
                 Id = 1,
-                Nome = "Carlos"
+                Nome = "Felipe"
             };
 
-            //Construtor
             var clientClass2 = new ClientClass(id: 1, nome: "Felipe");
 
+            ////////// primeira
+
             if (clientClass1.Equals(clientClass2))
-                Console.WriteLine("True");
+                Console.WriteLine("Equals True");
             else
-                Console.WriteLine("False");
+                Console.WriteLine("Equals False");
+
+            ////////// segunda
+            if (clientClass1 == clientClass2)
+                Console.WriteLine("== True");
+            else
+                Console.WriteLine("== False");
 
             //Erro
             //ClientClass clientClass99 = clientClass2 with { Nome = "Mario" };
 
             //////
 
-            var clientRecord = new ClientRecord
+            var clientRecord1 = new ClientRecord
             {
-                Id = 1
+                Id = 1,
+                Nome = "Felipe"
             };
 
-            ClientRecord clientRecord1 = new(id: 1, nome: "Felipe");
+            ClientRecord clienteRecordWith = clientRecord1 with { Nome = "Calors" };
+            clienteRecordWith.Nome = ""; // erro de compilacao
+
+            //ClientRecord clientRecord2 = new(id: 1, nome: "Felipe1");
 
 
-            ClientRecord clienteWith = clientRecord1 with { Nome = "Carlos" };
-
-            clienteWith.Nome = "";
-
-            if (clientRecord1.Equals(clientRecord))
+            if (clientRecord1.Equals(clientRecord2))
                 Console.WriteLine("True");
             else
                 Console.WriteLine("False");
+
+            if (clientRecord1 == clientRecord2)
+                Console.WriteLine("True");
+            else
+                Console.WriteLine("False");
+
+
+            //ClientRecord clienteWith = clientRecord1 with { Nome = "Carlos" };
+
+            //clienteWith.Nome = "";
+
+
 
 
         }
@@ -80,6 +99,6 @@ namespace Records
 
         public int Id { get; init; }
 
-        public string Nome { get; set; }
+        public string Nome { get; init; }
     }
 }

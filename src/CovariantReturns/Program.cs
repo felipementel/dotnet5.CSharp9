@@ -36,9 +36,17 @@ namespace CovariantReturns
 
     public class NegociacaoPF : Negociacao
     {
-        public override Pessoa ObterPessoa() // Fisica
+        public override Fisica ObterPessoa()
         {
-            return new Pessoa();
+            return new Fisica();
         }
     }
+
+    //public class NegociacaoPF : Negociacao
+    //{
+    //    public override Pessoa ObterPessoa() // Fisica
+    //    {
+    //        return new Pessoa();
+    //    }
+    //}
 }
