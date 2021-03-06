@@ -1,0 +1,5 @@
+﻿Como a struct funciona como uma variavel primitiva, ela é alocada na memoria Stack - a outra opção sera a memeoria heap
+
+A Stack funciona como uma area de memória LIFO (Last inf, First out) deixando o endereçamento mais rapido que a Heap
+
+A Heap é responsável por armazenar objetos dinamicos, como classes
